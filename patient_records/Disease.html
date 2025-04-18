@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDINOVA INT MEDICITY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MEDINOVA INTERNATIONAL MEDICITY</h1>
+        <h2 style="color:#ff0225cc;">OWNED & MANAGED BY A.G.C INT</h2>
+
+        <form id="add-record-form">
+            <label for="op-no">OP NO:</label>
+            <input type="text" id="op-no" required>
+
+            <label for="disease">Disease:</label>
+            <input type="text" id="disease" required>
+
+            <label for="doctor-name">Doctor Name:</label>
+            <input type="text" id="doctor-name" required>
+
+            <label for="dept">Department:</label>
+            <input type="text" id="dept" required>
+
+            <!-- Optional Fields -->
+            <label for="ad-date">Admission Date:</label>
+            <input type="date" id="ad-date">
+
+            <label for="ad-time">Admission Time:</label>
+            <input type="text" id="ad-time" readonly> <!-- Auto-generated -->
+
+            <label for="room">Room Type:</label>
+            <select id="room">
+                <option value="">Select Room Type</option>
+                <option value="Luxury">Luxury</option>
+                <option value="A/C">A/C</option>
+                <option value="NON A/C">NON A/C</option>
+            </select>
+
+            <label for="ad-room-no">Admission Room No:</label>
+            <input type="text" id="ad-room-no">
+
+            <label for="discharge-date">Discharge Date:</label>
+            <input type="date" id="discharge-date">
+
+            <!-- Doctor Notes moved to last -->
+            <label for="doctor-note">Doctor Notes:</label>
+            <textarea id="doctor-note" required></textarea>
+
+            <button type="button" onclick="addRecord()">Add Record</button>
+        </form>
+
+        <!-- Search and Display All Records Buttons -->
+        <div class="search-container">
+            <input type="text" id="search-op-no" placeholder="Enter OP No to Search">
+            <button onclick="searchRecord()">Search</button>
+            <button onclick="displayAllRecords()">Display All Records</button>
+        </div>
+
+        <!-- Table to Display Records -->
+        <table id="hospital-table">
+            <thead>
+                <tr>
+                    <th>OP NO</th>
+                    <th>Disease</th>
+                    <th>Doctor Name</th>
+                    <th>Dept</th>
+                    <th>AD Date</th>
+                    <th>AD Time</th>
+                    <th>Room</th>
+                    <th>AD Room NO</th>
+                    <th>Discharge Date</th>
+                    <th>Doctor Note</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Download & Import Buttons -->
+        <div class="excel-container">
+            <button onclick="downloadExcel()">Download Excel</button>
+            <input type="file" id="import-excel" accept=".xlsx, .xls" onchange="importExcel(event)">
+        </div>
+    </div>
+
+    <!-- Add the SheetJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

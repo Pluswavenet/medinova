@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RETRIVE INT</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>MEDINOVA INTERNATIONAL MEDICITY</h1>
+        <h2 style="color:#ff0225cc;">OWNED & MANAGED BY A.G.C INT</h2>
+
+       <div class="add-record">
+    <h2>Add New Record</h2>
+    <form id="add-record-form">
+        <input type="text" id="op-no" placeholder="OP No" required>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="father-name" placeholder="Father's Name" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <input type="date" id="dob" placeholder="Date of Birth" required onchange="calculateAge()">
+        <input type="text" id="age" placeholder="Age" readonly>
+        <select id="sex" required>
+            <option value="">Select Sex</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="tel" id="phone" placeholder="Phone" required>
+        <input type="date" id="registration-date" required>
+        <input type="text" id="religion" placeholder="Religion" required>
+        <button type="button" onclick="addRecord()">Add Record</button>
+    </form>
+
+    <div>
+
+<div class="search-container">
+    <input type="text" id="search-op-no" placeholder="Enter OP No to Search">
+    <button onclick="searchRecord()">Search</button>
+    <button onclick="displayAllRecords()">Display All Records</button>
+</div>
+
+
+
+</div>
+
+
+        <!-- Saved Records Section -->
+        <div class="saved-records">
+            <h2>Saved Records</h2>
+             <div class="scrollable-table">
+            <table id="hospital-table">
+                <thead>
+                    <tr>
+                        <th>OP No</th>
+                        <th>Name</th>
+                        <th>Father's Name</th>
+                        <th>Address</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>DOB</th>
+                        <th>Phone</th>
+                        <th>Registration Date</th>
+                        <th>Religion</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically generated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+       <div class="excel-container">
+    <button onclick="downloadExcel()">Download Excel</button>
+    <input type="file" id="import-excel" accept=".xlsx, .xls" onchange="importExcel(event)">
+</div>
+
+    </div>
+
+    <!-- Add the SheetJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
