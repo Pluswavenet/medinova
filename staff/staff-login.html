@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+  <meta charset="UTF-8" />
+  <title>Staff Login - MediNova</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="header">
+    <div class="header-left">
+      <h2>MediNova - Staff Login</h2>
+    </div>
+  </header>
+
+  <main>
+    <h1>Welcome to Medinova INT Medicity</h1>
+
+    <div id="welcome-message" style="display: none;">
+  <h3>Welcome, <span id="user-email"></span></h3>
+</div>
+
+
+    <!-- Login Form -->
+    <div id="login-section" autocomplete="off">
+      <form id="staff-login-form">
+        <input type="email" id="email" placeholder="Enter your email" required autocomplete="off" />
+        <input type="password" id="password" placeholder="Enter your password" required autocomplete="off" />
+        <button type="submit">Login</button>
+      </form>
+      <div id="status"></div>
+    </div>
+
+    <!-- Patient Appointments Section (Initially Hidden) -->
+    <div id="patient-details" style="display: none;">
+      <h2>Patients Records</h2>
+
+      <!-- Search & Show All Controls -->
+      <div class="search-bar">
+        <div class="left">
+          <button id="show-all-btn">Display All Records</button>
+        </div>
+        <div class="right">
+          <input type="text" id="search-name" placeholder="Search by full name" />
+          <button id="search-btn">Search</button>
+        </div>
+      </div>
+
+      <!-- Patient Table -->
+      <table id="patient-table">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Reason</th>
+            <th>Notes</th>
+            <th>Add/Edit Notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="staff-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Patient Appointment - MediNova</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h2>MEDINOVA INT MEDICITY</h2>
+    </div>
+    <div class="header-right">
+      <div class="dropdown">
+        <button class="dropbtn">Login</button>
+        <div class="dropdown-content">
+          <a href="staff/staff-login.html">Staff Login</a>
+          <a href="admin/admin-login.html">Admin Login</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>
+  Book An Appointment<br>
+  <span class="subheading">For Your Family</span>
+</h1>
+   <form id="appointment-form" autocomplete="off">
+  <input type="text" id="name" placeholder="Full Name" required autocomplete="off" />
+  <input type="text" id="address" placeholder="Address" required autocomplete="off" />
+  <input type="number" id="age" placeholder="Age" required autocomplete="off" />
+  <input type="tel" id="phone" placeholder="Phone Number" required autocomplete="off" />
+  
+  <select id="department" required autocomplete="off">
+    <option value="">Select Department</option>
+    <option value="Pediatrics">Pediatrics</option>
+    <option value="Orthopedics">Orthopedics</option>
+    <option value="Physician">Physician</option>
+  </select>
+
+  <select id="doctor" required autocomplete="off">
+    <option value="">Select Doctor</option>
+  </select>
+
+  <input type="date" id="date" required autocomplete="off" />
+  <input type="time" id="time" required autocomplete="off" />
+  <textarea id="reason" placeholder="Reason for Appointment" required autocomplete="off"></textarea>
+
+  <button type="submit">Make An Appointment</button>
+</form>
+
+    <p id="status"></p>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
